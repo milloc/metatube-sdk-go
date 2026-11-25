@@ -208,6 +208,18 @@ func TestTrim(t *testing.T) {
 		{"ABP-030-RESTORE.mkv", "ABP-030"},
 		{"ABP-030_restore-Restore", "ABP-030"},
 		{"ABP-030_restore-LTX.mp4", "ABP-030"},
+		// "-AI" restoration suffix (Topaz-style enhancers).
+		{"ABP-030-AI", "ABP-030"},
+		{"ABP-030-ai", "ABP-030"},
+		{"ABP-030_AI.mp4", "ABP-030"},
+		{"ABP-030-AI.mkv", "ABP-030"},
+		{"ABP-030-AI2.mp4", "ABP-030"},
+		{"ABP-030-AI-AI", "ABP-030"},
+		{"SSIS-329-AI-C.mp4", "SSIS-329"},
+		{"hhd800.com@SSIS-329-AI-4K.mp4", "SSIS-329"},
+		{"FC2-PPV-123456-AI.mp4", "FC2-123456"},
+		{"ABP-030-AI-LTX.mp4", "ABP-030"},
+		{"AI-030", "AI-030"}, // prefix must be kept.
 	} {
 		assert.Equal(t, unit.want, Trim(unit.orig), unit.orig)
 	}

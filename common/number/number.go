@@ -8,10 +8,11 @@ import (
 
 // restoreTags are suffixes appended by AI mosaic-restoration tools, which
 // are not a part of the movie number. For instance, Jasna appends "-LTX"
-// when the LTX restoration model is used (e.g. "ABP-030-LTX"), and such
-// numbers must be trimmed to "ABP-030" before searching, otherwise they
-// cannot be matched by any provider.
-const restoreTags = `ltx|basicvsr(?:\+\+)?|restore`
+// when the LTX restoration model is used (e.g. "ABP-030-LTX"), Topaz-style
+// tools append "-AI" (e.g. "ABP-030-AI"), and such numbers must be trimmed
+// to "ABP-030" before searching, otherwise they cannot be matched by any
+// provider.
+const restoreTags = `ltx|basicvsr(?:\+\+)?|restore|ai(?:\d+)?`
 
 func Trim(s string) string {
 	const maxExtLength = 7
