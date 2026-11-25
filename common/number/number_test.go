@@ -204,6 +204,10 @@ func TestTrim(t *testing.T) {
 		{"FC2-PPV-123456-LTX.mp4", "FC2-123456"},
 		{"ABP-030-BasicVSR++", "ABP-030"},
 		{"LTX-030", "LTX-030"}, // prefix must be kept.
+		{"ABP-030_restore.mp4", "ABP-030"},
+		{"ABP-030-RESTORE.mkv", "ABP-030"},
+		{"ABP-030_restore-Restore", "ABP-030"},
+		{"ABP-030_restore-LTX.mp4", "ABP-030"},
 	} {
 		assert.Equal(t, unit.want, Trim(unit.orig), unit.orig)
 	}

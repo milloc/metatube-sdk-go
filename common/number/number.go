@@ -11,7 +11,7 @@ import (
 // when the LTX restoration model is used (e.g. "ABP-030-LTX"), and such
 // numbers must be trimmed to "ABP-030" before searching, otherwise they
 // cannot be matched by any provider.
-const restoreTags = `ltx|basicvsr(?:\+\+)?`
+const restoreTags = `ltx|basicvsr(?:\+\+)?|restore`
 
 func Trim(s string) string {
 	const maxExtLength = 7
